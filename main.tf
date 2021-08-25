@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     spotify = {
-      version = "~> 0.1.5"
+      version = "~> 0.2.6"
       source  = "conradludgate/spotify"
     }
   }
@@ -32,14 +32,12 @@ resource "spotify_playlist" "playlist" {
 
 
 data "spotify_search_track" "by_artist" {
-  artists = ["Dolly Parton"]
-  #  album = "Jolene"
-  #  name  = "Early Morning Breeze"
+  artist = "Mumford and Sons"
+
 }
 
-output "playlist_url" {
-  value       = "https://open.spotify.com/playlist/${spotify_playlist.playlist.id}"
-  description = "Visit this URL in your browser to listen to the playlist"
-}
+output "tracks" {
+value=data.spotify_search_track.by_artist.tracks
 
+}
 
