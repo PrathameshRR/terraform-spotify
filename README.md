@@ -1,4 +1,4 @@
-# learn-terraform-spotify
+#First Terraform Project
 
 Create a playlist on Spotify by writing it as a Terraform configuration.
 
